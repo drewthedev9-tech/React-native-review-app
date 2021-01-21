@@ -6,7 +6,7 @@ import ReviewDetails from "../screens/reviewDetails";
 
 const { Navigator, Screen } = createStackNavigator();
 
-const HomeNavigator = () => (
+const HomeStack = () => (
   <Navigator initialRouteName="Home"
   screenOptions={{
     headerStyle: {
@@ -25,8 +25,8 @@ const HomeNavigator = () => (
   </Navigator>
 );
 
-export const AppNavigator = () => (
-  <NavigationContainer>
-    <HomeNavigator />
-  </NavigationContainer>
+export const HomeNavigator = () => (
+  // <NavigationContainer>
+    <HomeStack />
+  // </NavigationContainer>
 );
