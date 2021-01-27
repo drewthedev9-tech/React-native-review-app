@@ -3,10 +3,11 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../screens/home";
 import ReviewDetails from "../screens/reviewDetails";
+import Header from "../shared/header";
 
 const { Navigator, Screen } = createStackNavigator();
 
-const HomeStack = () => (
+const HomeStack = ({navigation}) => (
   <Navigator initialRouteName="Home"
   screenOptions={{
     headerStyle: {
@@ -16,8 +17,14 @@ const HomeStack = () => (
     headerTintColor: "#444",
   }}
   >
-    <Screen name="Home"
-     component={Home}
+    {/* home screen by default is shown */}
+    <Screen 
+    name="Home"
+    component={Home}
+    // using a function to import the header component which is shared across the aboutStack.js and homeStack.js
+    options={ () => ({ 
+      headerTitle: () => <Header  title='HOME' />,
+    })}
      />
     <Screen name="Details" 
     component={ReviewDetails} 

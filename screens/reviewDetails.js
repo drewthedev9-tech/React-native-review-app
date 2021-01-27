@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, FlatList, TouchableOpacity} from 'react-native'
 import {globalStyles} from '../styles/global';
-
+import Card from "../shared/card";
 
 
 
@@ -13,9 +13,11 @@ export default function Review({navigation, route}) {
   
     return(
         <View style={globalStyles.container}>
+          <Card>
             <Text>{route.params.title}</Text>
             <Text>{route.params.body}</Text>
             <Text>{route.params.rating}</Text>
+          </Card>
         </View>
     )
 }

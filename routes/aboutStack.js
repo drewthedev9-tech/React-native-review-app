@@ -1,8 +1,10 @@
 
-import React from "react";
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import About from "../screens/about";
+import Header from "../shared/header";
 
 
 const { Navigator, Screen } = createStackNavigator();
@@ -17,8 +19,13 @@ const AboutStack = () => (
     headerTintColor: "#444",
   }}
   >
-    <Screen name="About"
+    <Screen
+     name="About"
      component={About}
+     options={ () => ({ 
+        headerTitle: () => <Header  title='About' />,
+      })}
+     
      />
   
   </Navigator>
